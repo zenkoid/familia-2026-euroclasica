@@ -1,110 +1,377 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Giras y Documentos - Familia 2026 Euroclásica</title>
-  <style>
-    body {
-      font-family: "Segoe UI", Arial, sans-serif;
-      background-color: #f9fafc;
-      color: #333;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background-color: #2c3e50;
-      color: #fff;
-      text-align: center;
-      padding: 1.5em 0;
-    }
-    h1 {
-      margin: 0;
-      font-size: 1.8em;
-    }
-    section {
-      margin: 2em auto;
-      max-width: 800px;
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      padding: 1.5em;
-    }
-    h2 {
-      color: #2c3e50;
-      border-bottom: 2px solid #e0e0e0;
-      padding-bottom: 0.5em;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-    li {
-      margin: 0.4em 0;
-    }
-    a {
-      text-decoration: none;
-      color: #007acc;
-      font-weight: 500;
-    }
-    a:hover {
-      color: #005b99;
-    }
-    footer {
-      text-align: center;
-      padding: 1em;
-      font-size: 0.9em;
-      color: #777;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tours y Tickets · García del Toro · Europa 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400;500&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#F7F2EA;--sand:#EDE5D8;--warm:#D4C9B5;--indigo:#2B2D7A;--terracotta:#C17A5A;--gold:#B8973A;--sage:#7A9A7A;--ink:#2A2018;--ink-mid:#5A4E3C;--warm-grey:#9A8E7C;--border:#DDD5C5;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--cream);color:var(--ink);font-family:'Jost',sans-serif;font-weight:300;}
+
+.page-header{background:var(--indigo);padding:48px 80px 40px;}
+.back-link{font-size:9px;letter-spacing:.25em;text-transform:uppercase;color:rgba(247,242,234,.4);text-decoration:none;display:inline-flex;align-items:center;gap:8px;margin-bottom:28px;transition:color .2s;}
+.back-link:hover{color:rgba(184,151,58,.85);}
+.page-eyebrow{font-size:9px;letter-spacing:.4em;text-transform:uppercase;color:rgba(247,242,234,.3);margin-bottom:10px;}
+.page-title{font-family:'Playfair Display',serif;font-size:clamp(36px,6vw,64px);font-weight:400;color:#F7F2EA;line-height:1;margin-bottom:6px;}
+.page-title em{font-style:italic;color:rgba(184,151,58,.9);}
+.page-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;color:rgba(247,242,234,.45);margin-top:12px;}
+.header-rule{width:48px;height:1px;background:var(--gold);opacity:.4;margin:20px 0;}
+.header-count{display:flex;gap:36px;flex-wrap:wrap;}
+.hc-item{display:flex;flex-direction:column;gap:3px;}
+.hc-label{font-size:8px;letter-spacing:.3em;text-transform:uppercase;color:rgba(247,242,234,.25);}
+.hc-val{font-family:'Cormorant Garamond',serif;font-size:16px;color:rgba(247,242,234,.7);}
+
+.main{max-width:1100px;margin:0 auto;padding:56px 80px 80px;}
+
+.city-group{margin-bottom:52px;}
+.city-label{display:flex;align-items:center;gap:16px;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--border);}
+.city-label-num{font-family:'Playfair Display',serif;font-size:42px;font-weight:400;color:var(--border);line-height:1;}
+.city-label-name{font-family:'Playfair Display',serif;font-size:22px;font-weight:400;color:var(--ink);margin-bottom:1px;}
+.city-label-dates{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;color:var(--indigo);}
+
+.tkt-row{background:var(--sand);border:1px solid var(--border);padding:20px 24px;margin-bottom:8px;display:grid;grid-template-columns:42px 1fr auto;align-items:start;gap:16px;transition:background .15s;}
+.tkt-row:hover{background:#E4DACE;}
+.tkt-ico{font-size:22px;line-height:1;margin-top:2px;}
+.tkt-name{font-family:'Playfair Display',serif;font-size:14px;font-weight:600;color:var(--indigo);margin-bottom:4px;}
+.tkt-meta{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:5px;}
+.tkt-date{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--terracotta);font-weight:500;}
+.tkt-time-badge{font-family:'Caveat',cursive;font-size:17px;color:var(--terracotta);line-height:1;}
+.tkt-detail{font-size:11.5px;color:var(--ink-mid);line-height:1.6;margin-bottom:4px;}
+.tkt-refs{font-size:10px;color:var(--warm-grey);letter-spacing:.04em;line-height:1.7;}
+.tkt-refs strong{color:var(--ink-mid);}
+.badge-conf{display:inline-block;background:var(--indigo);color:#fff;font-size:8px;letter-spacing:.1em;text-transform:uppercase;padding:2px 7px;border-radius:2px;vertical-align:middle;margin-left:6px;}
+.warn{display:inline-flex;align-items:center;gap:5px;background:rgba(193,122,90,.08);border:1px solid rgba(193,122,90,.2);padding:4px 10px;font-size:10px;color:var(--terracotta);margin-top:5px;line-height:1.5;}
+
+/* PDF button simple */
+.tkt-pdf{display:flex;align-items:center;gap:6px;background:var(--indigo);color:#F7F2EA;font-size:9px;letter-spacing:.18em;text-transform:uppercase;padding:8px 14px;text-decoration:none;white-space:nowrap;align-self:start;transition:opacity .2s;}
+.tkt-pdf:hover{opacity:.8;}
+
+/* DROPDOWN para múltiples PDFs */
+.pdf-drop{position:relative;align-self:start;}
+.pdf-drop-btn{display:flex;align-items:center;gap:8px;background:var(--indigo);color:#F7F2EA;font-size:9px;letter-spacing:.18em;text-transform:uppercase;padding:8px 14px;cursor:pointer;border:none;white-space:nowrap;font-family:'Jost',sans-serif;}
+.pdf-drop-btn:hover{opacity:.85;}
+.pdf-drop-btn .arrow{font-size:10px;transition:transform .2s;}
+.pdf-drop-menu{display:none;position:absolute;right:0;top:100%;background:#fff;border:1px solid var(--border);min-width:200px;z-index:50;box-shadow:0 8px 24px rgba(43,45,122,.12);}
+.pdf-drop-menu.open{display:block;}
+.pdf-drop-menu a{display:flex;align-items:center;gap:10px;padding:10px 16px;font-size:11px;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--border);transition:background .15s;}
+.pdf-drop-menu a:last-child{border-bottom:none;}
+.pdf-drop-menu a:hover{background:var(--sand);}
+.pdf-drop-menu a span.pdf-label{font-weight:500;color:var(--indigo);}
+.pdf-drop-menu a span.pdf-sub{font-size:9.5px;color:var(--warm-grey);display:block;margin-top:1px;}
+
+.page-footer{background:var(--indigo);padding:40px 80px;text-align:center;}
+.page-footer p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:rgba(247,242,234,.4);}
+.page-footer a{color:rgba(184,151,58,.7);text-decoration:none;}
+
+@media(max-width:700px){
+  .page-header,.main,.page-footer{padding-left:24px;padding-right:24px;}
+  .tkt-row{grid-template-columns:32px 1fr;gap:10px;}
+  .tkt-pdf,.pdf-drop{grid-column:2;}
+}
+</style>
 </head>
 <body>
-  <header>
-    <h1>Documentos y Giras - Familia 2026 Euroclásica</h1>
-  </header>
 
-  <section>
-    <h2>Giras y Actividades</h2>
-    <ul>
-      <li><a href="Giras/01Coliseo.pdf" target="_blank">01 Coliseo</a></li>
-      <li><a href="Giras/02VatiSixtina.pdf" target="_blank">02 Vati Sixtina</a></li>
-      <li><a href="Giras/03TourLondon.pdf" target="_blank">03 Tour London</a></li>
-      <li><a href="Giras/04WstminsterAbbey.pdf" target="_blank">04 Westminster Abbey</a></li>
-      <li><a href="Giras/05LondonTower.pdf" target="_blank">05 London Tower</a></li>
-      <li><a href="Giras/06ZaanseSchans.pdf" target="_blank">06 Zaanse Schans</a></li>
-      <li><a href="Giras/07BrujasWalkingTour.pdf" target="_blank">07 Brujas Walking Tour</a></li>
-      <li><a href="Giras/08FirenzeWalkingTour.pdf" target="_blank">08 Firenze Walking Tour</a></li>
-      <li><a href="Giras/09LaAcademia.pdf" target="_blank">09 La Academia</a></li>
-      <li><a href="Giras/10ToscanaDayTrip.pdf" target="_blank">10 Toscana Day Trip</a></li>
-      <li><a href="Giras/11DuomoSiena.pdf" target="_blank">11 Duomo Siena</a></li>
-      <li><a href="Giras/Anna Frank Tkts.pdf" target="_blank">Anna Frank Tkts</a></li>
-    </ul>
-  </section>
+<div class="page-header">
+  <a href="../" class="back-link">← Volver al itinerario</a>
+  <p class="page-eyebrow">Europa en Familia · García del Toro · Junio–Julio 2026</p>
+  <h1 class="page-title">Tours <em>&</em> Tickets</h1>
+  <p class="page-sub">Museos · Excursiones · Tours guiados</p>
+  <div class="header-rule"></div>
+  <div class="header-count">
+    <div class="hc-item"><span class="hc-label">Actividades</span><span class="hc-val">15 confirmadas</span></div>
+    <div class="hc-item"><span class="hc-label">Viajeros</span><span class="hc-val">5 personas</span></div>
+    <div class="hc-item"><span class="hc-label">Ciudades</span><span class="hc-val">Roma · Londres · Ámsterdam · Brujas · París · Florencia</span></div>
+  </div>
+</div>
 
-  <section>
-    <h2>Restaurantes y Reservas</h2>
-    <ul>
-      <li><a href="Giras/DiningUNOSenna.pdf" target="_blank">Dining UNO Senna</a></li>
-      <li><a href="Giras/DiningDOSSenna.pdf" target="_blank">Dining DOS Senna</a></li>
-      <li><a href="Giras/DiningTRESenna.pdf" target="_blank">Dining TRES Senna</a></li>
-      <li><a href="Giras/DiningCUATROSenna.pdf" target="_blank">Dining CUATRO Senna</a></li>
-      <li><a href="Giras/DiningCINCOSenna.pdf" target="_blank">Dining CINCO Senna</a></li>
-    </ul>
-  </section>
+<div class="main">
 
-  <section>
-    <h2>Museos y Entradas Especiales</h2>
-    <ul>
-      <li><a href="Giras/HarryPotterWB.pdf" target="_blank">Harry Potter WB</a></li>
-      <li><a href="Giras/OrsayUNO.pdf" target="_blank">Orsay UNO</a></li>
-      <li><a href="Giras/OrsayDOS.pdf" target="_blank">Orsay DOS</a></li>
-      <li><a href="Giras/OrsayTRES.pdf" target="_blank">Orsay TRES</a></li>
-      <li><a href="Giras/OrsayCUATRO.pdf" target="_blank">Orsay CUATRO</a></li>
-      <li><a href="Giras/Orsay27Jun.pdf" target="_blank">Orsay 27 Jun</a></li>
-    </ul>
-  </section>
+  <!-- ══ ROMA ══ -->
+  <div class="city-group">
+    <div class="city-label">
+      <span class="city-label-num">01</span>
+      <div>
+        <div class="city-label-name">Roma</div>
+        <div class="city-label-dates">15 – 19 Jun · 4 noches</div>
+      </div>
+    </div>
 
-  <footer>
-    <p>© 2026 Familia Euroclásica | Documentos de viaje</p>
-  </footer>
+    <div class="tkt-row">
+      <div class="tkt-ico">🏟️</div>
+      <div>
+        <div class="tkt-name">Coliseo con App Oficial + Opción Arena <span class="badge-conf">Confirmado</span></div>
+        <div class="tkt-meta"><span class="tkt-date">Lun. 16 jun</span><span class="tkt-time-badge">10:00</span></div>
+        <div class="tkt-detail">5 personas · Duración ~2.5 hrs · Guía en español · ⚑ Via Marco Aurelio 19 · Llegar 30 min antes</div>
+        <div class="tkt-refs"><strong>Ref:</strong> GYG48YWQW99X &nbsp;·&nbsp; <strong>PIN:</strong> 5LCqmuUr</div>
+      </div>
+      <a href="01Coliseo.pdf" class="tkt-pdf">📄 PDF</a>
+    </div>
+
+    <div class="tkt-row">
+      <div class="tkt-ico">🎨</div>
+      <div>
+        <div class="tkt-name">Museos Vaticanos + Capilla Sixtina <span class="badge-conf">Confirmado</span></div>
+        <div class="tkt-meta"><span class="tkt-date">Mar. 17 jun</span><span class="tkt-time-badge">10:30</span></div>
+        <div class="tkt-detail">5 personas · Biglietto Corridoio 3 · 4 adultos precio completo + 1 reducido · ⚑ Entrada Viale Vaticano · Presentar ticket en exterior · Validar torneles 1er piso</div>
+        <div class="tkt-refs"><strong>Código:</strong> 2L2N6HZU1J4KWGLLI &nbsp;·&nbsp; <strong>Grupo:</strong> GYG2Q9NYX5RQ</div>
+        <div class="warn">⚠️ No reembolsable · No cambios</div>
+      </div>
+      <a href="02VatiSixtina.pdf" class="tkt-pdf">📄 PDF</a>
+    </div>
+  </div>
+
+  <!-- ══ LONDRES ══ -->
+  <div class="city-group">
+    <div class="city-label">
+      <span class="city-label-num">02</span>
+      <div>
+        <div class="city-label-name">Londres</div>
+        <div class="city-label-dates">19 – 22 Jun · 3 noches</div>
+      </div>
+    </div>
+
+    <div class="tkt-row">
+      <div class="tkt-ico">🚶</div>
+      <div>
+        <div class="tkt-name">Free Tour Londres en Español <span class="badge-conf">Confirmado</span></div>
+        <div class="tkt-meta"><span class="tkt-date">Vie. 19 jun</span><span class="tkt-time-badge">19:00</span></div>
+        <div class="tkt-detail">5 personas · Civitatis · ⚑ Piccadilly Circus frente a Lillywhites · Buscar bandera verde azulada · Propina voluntaria ~£10-15/persona</div>
+        <div class="tkt-refs"><strong>Ref:</strong> A38178853 &nbsp;·&nbsp; LON-298904-FREE</div>
+      </div>
+      <a href="03TourLondon.pdf" class="tkt-pdf">📄 PDF</a>
+    </div>
+
+    <div class="tkt-row">
+      <div class="tkt-ico">⛪</div>
+      <div>
+        <div class="tkt-name">Westminster Abbey <span class="badge-conf">Confirmado</span></div>
+        <div class="tkt-meta"><span class="tkt-date">Sáb. 20 jun</span><span class="tkt-time-badge">10:30</span></div>
+        <div class="tkt-detail">4 adultos £31 + 1 combo Adulto+Niño (6-17) · Guía souvenir en español incluido · ⚑ Escanear ticket en móvil · Entrar entre 10:30 y 11:00</div>
+        <div class="tkt-refs"><strong>Order:</strong> 1106202</div>
+      </div>
+      <a href="04WstminsterAbbey.pdf" class="tkt-pdf">📄 PDF</a>
+    </div>
+
+    <div class="tkt-row">
+      <div class="tkt-ico">👑</div>
+      <div>
+        <div class="tkt-name">Torre de Londres · Joyas de la Corona <span class="badge-conf">Confirmado</span></div>
+        <div class="tkt-meta"><span class="tkt-date">Sáb. 20 jun</span><span class="tkt-time-badge">13:30</span></div>
+        <div class="tkt-detail">1 Joven + 4 Adultos · Headout · ⚑ Tower of London · Llegar 15 min antes · DNI obligatorio</div>
+        <div class="tkt-refs"><strong>Reserva:</strong> 30897409</div>
+        <div class="warn">⚠️ Cancelar antes del 19 jun 13:30 para reembolso completo</div>
+      </div>
+      <a href="05LondonTower.pdf" class="tkt-pdf">📄 PDF</a>
+    </div>
+
+    <div class="tkt-row">
+      <div class="tkt-ico">⚡</div>
+      <div>
+        <div class="tkt-name">Warner Bros. Studio Tour — The Making of Harry Potter <span class="badge-conf">Confirmado</span></div>
+        <div class="tkt-meta"><span class="tkt-date">Dom. 21 jun</span><span class="tkt-time-badge">07:15</span></div>
+        <div class="tkt-detail">5 Adultos · Golden Tours · Autobús + Entrada al estudio · Salida bus: 07:30 AM · ⚑ Bulleid Way 123-151, Buckingham Palace Rd, Victoria SW1W 9SR · Presentarse 15 min antes</div>
+        <div class="tkt-refs"><strong>Ref:</strong> 289QHAWX &nbsp;·&nbsp; <strong>Código:</strong> WB &nbsp;·&nbsp; Total: £531.25</div>
+      </div>
+      <a href="HarryPotterWB.pdf" class="tkt-pdf">📄 PDF</a>
+    </div>
+  </div>
+
+  <!-- ══ ÁMSTERDAM ══ -->
+  <div class="city-group">
+    <div class="city-label">
+      <span class="city-label-num">03</span>
+      <div>
+        <div class="city-label-name">Ámsterdam</div>
+        <div class="city-label-dates">22 – 25 Jun · 3 noches</div>
+      </div>
+    </div>
+
+    <div class="tkt-row">
+      <div class="tkt-ico">📖</div>
+      <div>
+        <div class="tkt-name">Casa de Ana Frank <span class="badge-conf">Confirmado</span></div>
+        <div class="tkt-meta"><span class="tkt-date">Mar. 23 jun</span><span class="tkt-time-badge">16:45</span></div>
+        <div class="tkt-detail">4 Adultos (€16,50 c/u) + 1 Joven 10-17 años (€7,00) = €73,00 total · ⚑ Prinsengracht 263-267 · Mostrar boleto en teléfono · No llevar bolsas grandes ni carritos</div>
+        <div class="tkt-refs"><strong>Refs:</strong> 20250102254278 · 20250102264832 · 20250102240198 · 20250102242324 · 20250102241053</div>
+      </div>
+      <a href="AnnaFrankTkts.pdf" class="tkt-pdf">📄 PDF</a>
+    </div>
+
+    <div class="tkt-row">
+      <div class="tkt-ico">🌷</div>
+      <div>
+        <div class="tkt-name">Zaanse Schans · Edam · Volendam · Marken + Canal Cruise <span class="badge-conf">Confirmado</span></div>
+        <div class="tkt-meta"><span class="tkt-date">Miér. 24 jun</span><span class="tkt-time-badge">08:15</span></div>
+        <div class="tkt-detail">5 personas · Amsterdam G&amp;T · ~8 hrs · Incluye: autobús, guía en español, quesos, Canal Cruise 1 hr · ⚑ De Ruijterkade 151-153 · Buscar paraguas azul "Ámsterdam G&amp;T"</div>
+        <div class="tkt-refs"><strong>Ref:</strong> 1383565083 &nbsp;·&nbsp; VIA-89054796</div>
+        <div class="warn">⚠️ Cancelar antes del 23 jun 08:15</div>
+      </div>
+      <a href="06ZaanseSchans.pdf" class="tkt-pdf">📄 PDF</a>
+    </div>
+  </div>
+
+  <!-- ══ BRUJAS ══ -->
+  <div class="city-group">
+    <div class="city-label">
+      <span class="city-label-num">04</span>
+      <div>
+        <div class="city-label-name">Brujas · Bruselas</div>
+        <div class="city-label-dates">25 – 26 Jun · 1 noche</div>
+      </div>
+    </div>
+
+    <div class="tkt-row">
+      <div class="tkt-ico">🏰</div>
+      <div>
+        <div class="tkt-name">Bruges: Guided Walking Tour <span class="badge-conf">Confirmado</span></div>
+        <div class="tkt-meta"><span class="tkt-date">Jue. 25 jun</span><span class="tkt-time-badge">14:00</span></div>
+        <div class="tkt-detail">4 adultos + 1 joven · Buendía Tours · 2 hrs · En inglés · ⚑ Stationsplein 4, frente Carrefour Express · Auriculares propios o 1€ en sitio · Finaliza: Markt 7</div>
+        <div class="tkt-refs"><strong>Ref:</strong> GYGVN3A37Z6Z &nbsp;·&nbsp; <strong>PIN:</strong> XLEUmajf</div>
+        <div class="warn">⚠️ Cancelar antes del 24 jun 14:00</div>
+      </div>
+      <a href="07BrujasWalkingTour.pdf" class="tkt-pdf">📄 PDF</a>
+    </div>
+  </div>
+
+  <!-- ══ PARÍS ══ -->
+  <div class="city-group">
+    <div class="city-label">
+      <span class="city-label-num">05</span>
+      <div>
+        <div class="city-label-name">París</div>
+        <div class="city-label-dates">26 – 29 Jun · 3 noches</div>
+      </div>
+    </div>
+
+    <!-- Crucero Sena — DROPDOWN 5 PDFs -->
+    <div class="tkt-row">
+      <div class="tkt-ico">🛥️</div>
+      <div>
+        <div class="tkt-name">Crucero Cena VIP · Bateau Le Theo · La Croisière Gourmande <span class="badge-conf">Confirmado</span></div>
+        <div class="tkt-meta"><span class="tkt-date">Vie. 26 jun</span><span class="tkt-time-badge">21:30</span></div>
+        <div class="tkt-detail">5 personas · Crucero VIP 2h · 2º servicio · Solo incluye comida · Mostrar voucher en teléfono · Un boleto por viajero</div>
+        <div class="tkt-refs"><strong>Voucher:</strong> #99959915 &nbsp;·&nbsp; <strong>Ref:</strong> 73451654648870 &nbsp;·&nbsp; Lead Traveler: Benjamin Garcia</div>
+      </div>
+      <div class="pdf-drop">
+        <button class="pdf-drop-btn" onclick="toggleDrop(this)">📄 PDFs <span class="arrow">▾</span></button>
+        <div class="pdf-drop-menu">
+          <a href="DiningUNOSenna.pdf"><span class="pdf-label">📄 Viajero 1</span><span class="pdf-sub">DiningUNOSenna.pdf</span></a>
+          <a href="DiningDOSSenna.pdf"><span class="pdf-label">📄 Viajero 2</span><span class="pdf-sub">DiningDOSSenna.pdf</span></a>
+          <a href="DiningTRESenna.pdf"><span class="pdf-label">📄 Viajero 3</span><span class="pdf-sub">DiningTRESenna.pdf</span></a>
+          <a href="DiningCUATROSenna.pdf"><span class="pdf-label">📄 Viajero 4</span><span class="pdf-sub">DiningCUATROSenna.pdf</span></a>
+          <a href="DiningCINCOSenna.pdf"><span class="pdf-label">📄 Viajero 5</span><span class="pdf-sub">DiningCINCOSenna.pdf</span></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Musée d'Orsay — DROPDOWN 4 PDFs -->
+    <div class="tkt-row">
+      <div class="tkt-ico">🎨</div>
+      <div>
+        <div class="tkt-name">Musée d'Orsay · Billet d'entrée horodaté <span class="badge-conf">Confirmado</span></div>
+        <div class="tkt-meta"><span class="tkt-date">Sáb. 27 jun</span><span class="tkt-time-badge">10:30</span></div>
+        <div class="tkt-detail">4 Adultos (€16,00 c/u) + 1 Menor (entrada gratuita) · Monet · Van Gogh · Degas · Renoir · ⚑ Accès 1 par le Quai · Esplanade Valéry Giscard d'Estaing, 75007 París · ID: 196965437</div>
+        <div class="tkt-refs"><strong>N° billets:</strong> 73302938072218 · 73308163033060 · 73302000948956 · 73305515645905</div>
+        <div class="warn">⚠️ El menor debe presentar identificación en taquilla para acceder gratis</div>
+      </div>
+      <div class="pdf-drop">
+        <button class="pdf-drop-btn" onclick="toggleDrop(this)">📄 PDFs <span class="arrow">▾</span></button>
+        <div class="pdf-drop-menu">
+          <a href="OrsayUNO.pdf"><span class="pdf-label">📄 Adulto 1</span><span class="pdf-sub">OrsayUNO.pdf · N° 73302938072218</span></a>
+          <a href="OrsayDOS.pdf"><span class="pdf-label">📄 Adulto 2</span><span class="pdf-sub">OrsayDOS.pdf · N° 73308163033060</span></a>
+          <a href="OrsayTRES.pdf"><span class="pdf-label">📄 Adulto 3</span><span class="pdf-sub">OrsayTRES.pdf · N° 73302000948956</span></a>
+          <a href="OrsayCUATRO.pdf"><span class="pdf-label">📄 Adulto 4</span><span class="pdf-sub">OrsayCUATRO.pdf · N° 73305515645905</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ FLORENCIA ══ -->
+  <div class="city-group">
+    <div class="city-label">
+      <span class="city-label-num">06</span>
+      <div>
+        <div class="city-label-name">Pisa · Florencia · Toscana</div>
+        <div class="city-label-dates">29 Jun – 3 Jul · 4 noches</div>
+      </div>
+    </div>
+
+    <div class="tkt-row">
+      <div class="tkt-ico">🚶</div>
+      <div>
+        <div class="tkt-name">Free Walking Tour Original Florence <span class="badge-conf">Confirmado</span></div>
+        <div class="tkt-meta"><span class="tkt-date">Mar. 30 jun</span><span class="tkt-time-badge">17:15</span></div>
+        <div class="tkt-detail">⚑ Piazza dell'Unità Italiana (junto a la estación) · Buscar la bandera pirata · Propina voluntaria</div>
+        <div class="tkt-refs"><strong>Ref:</strong> 1383901485</div>
+      </div>
+      <a href="08FirenzWalkingTour.pdf" class="tkt-pdf">📄 PDF</a>
+    </div>
+
+    <div class="tkt-row">
+      <div class="tkt-ico">🗿</div>
+      <div>
+        <div class="tkt-name">Galería de la Academia · El David · Tour en español <span class="badge-conf">Confirmado</span></div>
+        <div class="tkt-meta"><span class="tkt-date">Miér. 1 jul</span><span class="tkt-time-badge">10:00</span></div>
+        <div class="tkt-detail">5 personas · THINGS TO DO IN FZCO · Incluye: entrada + guía experto + auriculares · ⚑ Via Ricasoli 41 · Quedarse frente a la puerta · Tel: +39 3384805622</div>
+        <div class="tkt-refs"><strong>Ref:</strong> 1383904577 &nbsp;·&nbsp; VIA-89126531</div>
+      </div>
+      <a href="09LaAcademia.pdf" class="tkt-pdf">📄 PDF</a>
+    </div>
+
+    <div class="tkt-row">
+      <div class="tkt-ico">🍷</div>
+      <div>
+        <div class="tkt-name">Siena · San Gimignano · Chianti · Ciao Florence <span class="badge-conf">Confirmado</span></div>
+        <div class="tkt-meta"><span class="tkt-date">Jue. 2 jul</span><span class="tkt-time-badge">08:45</span></div>
+        <div class="tkt-detail">5 personas · En español · Incluye: autobús WiFi, guía, degustación vinos Chianti + aperitivos · ⚑ Piazzale Montelungo · Buscar chaqueta FUCSIA "CIAOFLORENCE" · Llegar 20 min antes · Tel: +39 055354044</div>
+        <div class="tkt-refs"><strong>Ref:</strong> 1383897661 &nbsp;·&nbsp; VIA-89125244</div>
+      </div>
+      <a href="10ToscanaDayTrip.pdf" class="tkt-pdf">📄 PDF</a>
+    </div>
+
+    <div class="tkt-row">
+      <div class="tkt-ico">⛪</div>
+      <div>
+        <div class="tkt-name">Duomo de Siena · Evita colas <span class="badge-conf">Confirmado</span></div>
+        <div class="tkt-meta"><span class="tkt-date">Jue. 2 jul</span><span class="tkt-time-badge">Flexible</span></div>
+        <div class="tkt-detail">5 personas · Catedral + Biblioteca + Museo Ópera + Cripta + Baptisterio · ⚑ Piazza del Duomo 1, Siena · Canjear cupón en taquilla · Tel: +39 0577 286300</div>
+        <div class="tkt-refs"><strong>Ref:</strong> 1383907761</div>
+      </div>
+      <a href="11DuomoSiena.pdf" class="tkt-pdf">📄 PDF</a>
+    </div>
+  </div>
+
+</div>
+
+<div class="page-footer">
+  <p>Europa en Familia · García del Toro · Jun–Jul 2026 &nbsp;·&nbsp; <a href="../">← Volver al itinerario completo</a></p>
+</div>
+
+<script>
+function toggleDrop(btn) {
+  const menu = btn.nextElementSibling;
+  const arrow = btn.querySelector('.arrow');
+  const isOpen = menu.classList.contains('open');
+  // cerrar todos
+  document.querySelectorAll('.pdf-drop-menu.open').forEach(m => m.classList.remove('open'));
+  document.querySelectorAll('.pdf-drop-btn .arrow').forEach(a => a.textContent = '▾');
+  // abrir este si estaba cerrado
+  if (!isOpen) {
+    menu.classList.add('open');
+    arrow.textContent = '▴';
+  }
+}
+// cerrar al click fuera
+document.addEventListener('click', e => {
+  if (!e.target.closest('.pdf-drop')) {
+    document.querySelectorAll('.pdf-drop-menu.open').forEach(m => m.classList.remove('open'));
+    document.querySelectorAll('.pdf-drop-btn .arrow').forEach(a => a.textContent = '▾');
+  }
+});
+</script>
 </body>
 </html>
