@@ -1,178 +1,110 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tours y Tickets · Europa en Familia 2026</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Jost:wght@200;300;400;500&family=Cormorant+Garamond:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>Giras y Documentos - Familia 2026 Euroclásica</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background-color: #f9fafc;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #2c3e50;
+      color: #fff;
+      text-align: center;
+      padding: 1.5em 0;
+    }
+    h1 {
+      margin: 0;
+      font-size: 1.8em;
+    }
+    section {
+      margin: 2em auto;
+      max-width: 800px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      padding: 1.5em;
+    }
+    h2 {
+      color: #2c3e50;
+      border-bottom: 2px solid #e0e0e0;
+      padding-bottom: 0.5em;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      margin: 0.4em 0;
+    }
+    a {
+      text-decoration: none;
+      color: #007acc;
+      font-weight: 500;
+    }
+    a:hover {
+      color: #005b99;
+    }
+    footer {
+      text-align: center;
+      padding: 1em;
+      font-size: 0.9em;
+      color: #777;
+    }
+  </style>
 </head>
-<body style="margin:0;padding:0;background:#F7F2EA;font-family:'Jost',sans-serif;font-weight:300;">
+<body>
+  <header>
+    <h1>Documentos y Giras - Familia 2026 Euroclásica</h1>
+  </header>
 
-  <!-- Header -->
-  <div style="background:#5A4E3C;padding:40px 40px 32px;">
-    <div style="max-width:700px;margin:0 auto;">
-      <div style="display:flex;align-items:center;gap:10px;margin-bottom:24px;">
-        <img src="../index.html" style="display:none;">
-        <a href="../index.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;">
-          <img src="data:image/png;base64,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" style="width:28px;opacity:.7;">
-          <span style="font-family:'Playfair Display',serif;font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:rgba(247,242,234,.65);">FORA</span>
-        </a>
-        <span style="color:rgba(247,242,234,.25);margin:0 8px;">·</span>
-        <a href="../index.html" style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(247,242,234,.4);text-decoration:none;">← Volver al itinerario</a>
-      </div>
-      <div style="font-size:36px;margin-bottom:12px;">🎟️</div>
-      <h1 style="font-family:'Playfair Display',serif;font-size:36px;font-weight:400;color:#F7F2EA;margin-bottom:6px;">Tours y Tickets</h1>
-      <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:rgba(247,242,234,.55);">Museos · Excursiones · Visitas guiadas · 11 actividades confirmadas</p>
-    </div>
-  </div>
+  <section>
+    <h2>Giras y Actividades</h2>
+    <ul>
+      <li><a href="Giras/01Coliseo.pdf" target="_blank">01 Coliseo</a></li>
+      <li><a href="Giras/02VatiSixtina.pdf" target="_blank">02 Vati Sixtina</a></li>
+      <li><a href="Giras/03TourLondon.pdf" target="_blank">03 Tour London</a></li>
+      <li><a href="Giras/04WstminsterAbbey.pdf" target="_blank">04 Westminster Abbey</a></li>
+      <li><a href="Giras/05LondonTower.pdf" target="_blank">05 London Tower</a></li>
+      <li><a href="Giras/06ZaanseSchans.pdf" target="_blank">06 Zaanse Schans</a></li>
+      <li><a href="Giras/07BrujasWalkingTour.pdf" target="_blank">07 Brujas Walking Tour</a></li>
+      <li><a href="Giras/08FirenzeWalkingTour.pdf" target="_blank">08 Firenze Walking Tour</a></li>
+      <li><a href="Giras/09LaAcademia.pdf" target="_blank">09 La Academia</a></li>
+      <li><a href="Giras/10ToscanaDayTrip.pdf" target="_blank">10 Toscana Day Trip</a></li>
+      <li><a href="Giras/11DuomoSiena.pdf" target="_blank">11 Duomo Siena</a></li>
+      <li><a href="Giras/Anna Frank Tkts.pdf" target="_blank">Anna Frank Tkts</a></li>
+    </ul>
+  </section>
 
-  <!-- Files list -->
-  <div style="max-width:700px;margin:0 auto;padding:40px 40px 80px;">
-    <p style="font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:#9A8E7C;margin-bottom:20px;">11 documentos · Toca para abrir cada archivo</p>
-    <div style="display:flex;flex-direction:column;gap:6px;">
-      
-      <a href="01Coliseo.pdf" target="_blank" style="text-decoration:none;">
-        <div style="background:white;border:1px solid #DDD5C5;padding:18px 24px;display:flex;align-items:center;gap:16px;transition:all .2s;cursor:pointer;"
-             onmouseover="this.style.borderColor='#B8973A';this.style.background='#F7F2EA'"
-             onmouseout="this.style.borderColor='#DDD5C5';this.style.background='white'">
-          <span style="font-size:22px;flex-shrink:0;">📄</span>
-          <div style="flex:1;">
-            <p style="font-family:'Playfair Display',serif;font-size:14px;color:#2B2D7A;font-weight:600;">01Coliseo</p>
-            <p style="font-size:10px;color:#9A8E7C;letter-spacing:.1em;text-transform:uppercase;margin-top:2px;">PDF · Toca para abrir</p>
-          </div>
-          <span style="font-size:18px;color:#B8973A;">→</span>
-        </div>
-      </a>
-      <a href="02VatiSixtina.pdf" target="_blank" style="text-decoration:none;">
-        <div style="background:white;border:1px solid #DDD5C5;padding:18px 24px;display:flex;align-items:center;gap:16px;transition:all .2s;cursor:pointer;"
-             onmouseover="this.style.borderColor='#B8973A';this.style.background='#F7F2EA'"
-             onmouseout="this.style.borderColor='#DDD5C5';this.style.background='white'">
-          <span style="font-size:22px;flex-shrink:0;">📄</span>
-          <div style="flex:1;">
-            <p style="font-family:'Playfair Display',serif;font-size:14px;color:#2B2D7A;font-weight:600;">02VatiSixtina</p>
-            <p style="font-size:10px;color:#9A8E7C;letter-spacing:.1em;text-transform:uppercase;margin-top:2px;">PDF · Toca para abrir</p>
-          </div>
-          <span style="font-size:18px;color:#B8973A;">→</span>
-        </div>
-      </a>
-      <a href="03TourLondon.pdf" target="_blank" style="text-decoration:none;">
-        <div style="background:white;border:1px solid #DDD5C5;padding:18px 24px;display:flex;align-items:center;gap:16px;transition:all .2s;cursor:pointer;"
-             onmouseover="this.style.borderColor='#B8973A';this.style.background='#F7F2EA'"
-             onmouseout="this.style.borderColor='#DDD5C5';this.style.background='white'">
-          <span style="font-size:22px;flex-shrink:0;">📄</span>
-          <div style="flex:1;">
-            <p style="font-family:'Playfair Display',serif;font-size:14px;color:#2B2D7A;font-weight:600;">03TourLondon</p>
-            <p style="font-size:10px;color:#9A8E7C;letter-spacing:.1em;text-transform:uppercase;margin-top:2px;">PDF · Toca para abrir</p>
-          </div>
-          <span style="font-size:18px;color:#B8973A;">→</span>
-        </div>
-      </a>
-      <a href="04WstminsterAbbey.pdf" target="_blank" style="text-decoration:none;">
-        <div style="background:white;border:1px solid #DDD5C5;padding:18px 24px;display:flex;align-items:center;gap:16px;transition:all .2s;cursor:pointer;"
-             onmouseover="this.style.borderColor='#B8973A';this.style.background='#F7F2EA'"
-             onmouseout="this.style.borderColor='#DDD5C5';this.style.background='white'">
-          <span style="font-size:22px;flex-shrink:0;">📄</span>
-          <div style="flex:1;">
-            <p style="font-family:'Playfair Display',serif;font-size:14px;color:#2B2D7A;font-weight:600;">04WstminsterAbbey</p>
-            <p style="font-size:10px;color:#9A8E7C;letter-spacing:.1em;text-transform:uppercase;margin-top:2px;">PDF · Toca para abrir</p>
-          </div>
-          <span style="font-size:18px;color:#B8973A;">→</span>
-        </div>
-      </a>
-      <a href="05LondonTower.pdf" target="_blank" style="text-decoration:none;">
-        <div style="background:white;border:1px solid #DDD5C5;padding:18px 24px;display:flex;align-items:center;gap:16px;transition:all .2s;cursor:pointer;"
-             onmouseover="this.style.borderColor='#B8973A';this.style.background='#F7F2EA'"
-             onmouseout="this.style.borderColor='#DDD5C5';this.style.background='white'">
-          <span style="font-size:22px;flex-shrink:0;">📄</span>
-          <div style="flex:1;">
-            <p style="font-family:'Playfair Display',serif;font-size:14px;color:#2B2D7A;font-weight:600;">05LondonTower</p>
-            <p style="font-size:10px;color:#9A8E7C;letter-spacing:.1em;text-transform:uppercase;margin-top:2px;">PDF · Toca para abrir</p>
-          </div>
-          <span style="font-size:18px;color:#B8973A;">→</span>
-        </div>
-      </a>
-      <a href="06ZaanseSchans.pdf" target="_blank" style="text-decoration:none;">
-        <div style="background:white;border:1px solid #DDD5C5;padding:18px 24px;display:flex;align-items:center;gap:16px;transition:all .2s;cursor:pointer;"
-             onmouseover="this.style.borderColor='#B8973A';this.style.background='#F7F2EA'"
-             onmouseout="this.style.borderColor='#DDD5C5';this.style.background='white'">
-          <span style="font-size:22px;flex-shrink:0;">📄</span>
-          <div style="flex:1;">
-            <p style="font-family:'Playfair Display',serif;font-size:14px;color:#2B2D7A;font-weight:600;">06ZaanseSchans</p>
-            <p style="font-size:10px;color:#9A8E7C;letter-spacing:.1em;text-transform:uppercase;margin-top:2px;">PDF · Toca para abrir</p>
-          </div>
-          <span style="font-size:18px;color:#B8973A;">→</span>
-        </div>
-      </a>
-      <a href="07BrujasWalkingTour.pdf" target="_blank" style="text-decoration:none;">
-        <div style="background:white;border:1px solid #DDD5C5;padding:18px 24px;display:flex;align-items:center;gap:16px;transition:all .2s;cursor:pointer;"
-             onmouseover="this.style.borderColor='#B8973A';this.style.background='#F7F2EA'"
-             onmouseout="this.style.borderColor='#DDD5C5';this.style.background='white'">
-          <span style="font-size:22px;flex-shrink:0;">📄</span>
-          <div style="flex:1;">
-            <p style="font-family:'Playfair Display',serif;font-size:14px;color:#2B2D7A;font-weight:600;">07BrujasWalkingTour</p>
-            <p style="font-size:10px;color:#9A8E7C;letter-spacing:.1em;text-transform:uppercase;margin-top:2px;">PDF · Toca para abrir</p>
-          </div>
-          <span style="font-size:18px;color:#B8973A;">→</span>
-        </div>
-      </a>
-      <a href="08FirenzeWalkingTour.pdf" target="_blank" style="text-decoration:none;">
-        <div style="background:white;border:1px solid #DDD5C5;padding:18px 24px;display:flex;align-items:center;gap:16px;transition:all .2s;cursor:pointer;"
-             onmouseover="this.style.borderColor='#B8973A';this.style.background='#F7F2EA'"
-             onmouseout="this.style.borderColor='#DDD5C5';this.style.background='white'">
-          <span style="font-size:22px;flex-shrink:0;">📄</span>
-          <div style="flex:1;">
-            <p style="font-family:'Playfair Display',serif;font-size:14px;color:#2B2D7A;font-weight:600;">08FirenzeWalkingTour</p>
-            <p style="font-size:10px;color:#9A8E7C;letter-spacing:.1em;text-transform:uppercase;margin-top:2px;">PDF · Toca para abrir</p>
-          </div>
-          <span style="font-size:18px;color:#B8973A;">→</span>
-        </div>
-      </a>
-      <a href="09LaAcademia.pdf" target="_blank" style="text-decoration:none;">
-        <div style="background:white;border:1px solid #DDD5C5;padding:18px 24px;display:flex;align-items:center;gap:16px;transition:all .2s;cursor:pointer;"
-             onmouseover="this.style.borderColor='#B8973A';this.style.background='#F7F2EA'"
-             onmouseout="this.style.borderColor='#DDD5C5';this.style.background='white'">
-          <span style="font-size:22px;flex-shrink:0;">📄</span>
-          <div style="flex:1;">
-            <p style="font-family:'Playfair Display',serif;font-size:14px;color:#2B2D7A;font-weight:600;">09LaAcademia</p>
-            <p style="font-size:10px;color:#9A8E7C;letter-spacing:.1em;text-transform:uppercase;margin-top:2px;">PDF · Toca para abrir</p>
-          </div>
-          <span style="font-size:18px;color:#B8973A;">→</span>
-        </div>
-      </a>
-      <a href="10ToscanaDayTrip.pdf" target="_blank" style="text-decoration:none;">
-        <div style="background:white;border:1px solid #DDD5C5;padding:18px 24px;display:flex;align-items:center;gap:16px;transition:all .2s;cursor:pointer;"
-             onmouseover="this.style.borderColor='#B8973A';this.style.background='#F7F2EA'"
-             onmouseout="this.style.borderColor='#DDD5C5';this.style.background='white'">
-          <span style="font-size:22px;flex-shrink:0;">📄</span>
-          <div style="flex:1;">
-            <p style="font-family:'Playfair Display',serif;font-size:14px;color:#2B2D7A;font-weight:600;">10ToscanaDayTrip</p>
-            <p style="font-size:10px;color:#9A8E7C;letter-spacing:.1em;text-transform:uppercase;margin-top:2px;">PDF · Toca para abrir</p>
-          </div>
-          <span style="font-size:18px;color:#B8973A;">→</span>
-        </div>
-      </a>
-      <a href="11DuomoSiena.pdf" target="_blank" style="text-decoration:none;">
-        <div style="background:white;border:1px solid #DDD5C5;padding:18px 24px;display:flex;align-items:center;gap:16px;transition:all .2s;cursor:pointer;"
-             onmouseover="this.style.borderColor='#B8973A';this.style.background='#F7F2EA'"
-             onmouseout="this.style.borderColor='#DDD5C5';this.style.background='white'">
-          <span style="font-size:22px;flex-shrink:0;">📄</span>
-          <div style="flex:1;">
-            <p style="font-family:'Playfair Display',serif;font-size:14px;color:#2B2D7A;font-weight:600;">11DuomoSiena</p>
-            <p style="font-size:10px;color:#9A8E7C;letter-spacing:.1em;text-transform:uppercase;margin-top:2px;">PDF · Toca para abrir</p>
-          </div>
-          <span style="font-size:18px;color:#B8973A;">→</span>
-        </div>
-      </a>
-    </div>
+  <section>
+    <h2>Restaurantes y Reservas</h2>
+    <ul>
+      <li><a href="Giras/DiningUNOSenna.pdf" target="_blank">Dining UNO Senna</a></li>
+      <li><a href="Giras/DiningDOSSenna.pdf" target="_blank">Dining DOS Senna</a></li>
+      <li><a href="Giras/DiningTRESenna.pdf" target="_blank">Dining TRES Senna</a></li>
+      <li><a href="Giras/DiningCUATROSenna.pdf" target="_blank">Dining CUATRO Senna</a></li>
+      <li><a href="Giras/DiningCINCOSenna.pdf" target="_blank">Dining CINCO Senna</a></li>
+    </ul>
+  </section>
 
-    <!-- Footer -->
-    <div style="margin-top:48px;padding-top:24px;border-top:1px solid #DDD5C5;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
-      <a href="../index.html" style="display:inline-flex;align-items:center;gap:8px;text-decoration:none;background:#5A4E3C;color:#F7F2EA;padding:12px 24px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;">
-        ← Volver al itinerario completo
-      </a>
-      <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;color:#9A8E7C;">Familia García del Toro · Europa 2026</p>
-    </div>
-  </div>
+  <section>
+    <h2>Museos y Entradas Especiales</h2>
+    <ul>
+      <li><a href="Giras/HarryPotterWB.pdf" target="_blank">Harry Potter WB</a></li>
+      <li><a href="Giras/OrsayUNO.pdf" target="_blank">Orsay UNO</a></li>
+      <li><a href="Giras/OrsayDOS.pdf" target="_blank">Orsay DOS</a></li>
+      <li><a href="Giras/OrsayTRES.pdf" target="_blank">Orsay TRES</a></li>
+      <li><a href="Giras/OrsayCUATRO.pdf" target="_blank">Orsay CUATRO</a></li>
+      <li><a href="Giras/Orsay27Jun.pdf" target="_blank">Orsay 27 Jun</a></li>
+    </ul>
+  </section>
 
+  <footer>
+    <p>© 2026 Familia Euroclásica | Documentos de viaje</p>
+  </footer>
 </body>
 </html>
